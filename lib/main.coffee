@@ -3,9 +3,6 @@ fs = require "fs"
 
 class GitTabStatus
     activate: (state) ->
-        # atom.project.getRepo()?.on "status-changed", @updateTabs
-        # atom.workspaceView.eachEditorView @updateTabs
-        # process.nextTick @updateTabs
         setInterval @updateTabs, 1000
 
     updateTabs: ->
