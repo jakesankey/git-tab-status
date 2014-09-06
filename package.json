@@ -1,0 +1,22 @@
+{
+  "name": "git-tab-status",
+  "main": "./lib/main.coffee",
+  "version": "0.1.0",
+  "description": "Color code tabs based on git status.",
+  "repository": {
+    "type": "git",
+    "url": "NOT YET"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  },
+  "readme": "# Git Tab Status Package for Atom",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "NOT YET"
+  },
+  "homepage": "NOT YET"
+}
