@@ -12,7 +12,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {},
-  "readme": "# Git Tab Status Package for Atom\n\n`apm install git-tab-status`\n\n![](https://raw.githubusercontent.com/jakesankey/git-tab-status/master/resources/screenshot.png)\n\nThis package adds the ability for your open tabs to reflect their git status.",
+  "readme": "## Git Tab Status Package for Atom  ![](https://travis-ci.org/jakesankey/git-tab-status.svg?branch=master)\n\n`apm install git-tab-status`\n\n![](https://raw.githubusercontent.com/jakesankey/git-tab-status/master/resources/screenshot.png)\n\nThis package adds the ability for your open tabs to reflect their git status.",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/jakesankey/git-tab-status/issues"

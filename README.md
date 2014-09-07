@@ -1,4 +1,4 @@
-# Git Tab Status Package for Atom
+## Git Tab Status Package for Atom ![](https://travis-ci.org/jakesankey/git-tab-status.svg?branch=master)
 
 `apm install git-tab-status`
 
