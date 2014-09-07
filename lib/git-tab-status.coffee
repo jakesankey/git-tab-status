@@ -33,6 +33,8 @@ class GitTabStatus
 
     _pathExists: (path) -> fs.existsSync path
 
-    _findTabForPath: (path) -> $(".tab [data-path='#{path}']")
+    _findTabForPath: (path) ->
+        path = path.replace /\\/g, '\\\\'
+        $(".tab [data-path='#{path}']")
 
 module.exports = new GitTabStatus()
