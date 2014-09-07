@@ -2,21 +2,26 @@
 fs = require "fs"
 
 class GitTabStatus
-    activate: (state) ->
-        setInterval @updateTabs, 1000
+    activate: ->
+        @_setupWatchConditions()
 
-    updateTabs: ->
-        editors = atom.workspace.getEditors()
-        for editor in editors
-            updateTabStylesForPath editor.getPath()
+    _setupWatchConditions: ->
+        setInterval @_updateTabs, 1000
 
-    updateTabStylesForPath = (path) ->
-        if fs.existsSync path
-            repo = atom.project.getRepo()
+    _updateTabs: =>
+        @_updateTabStylesForPath editor.getPath() for editor in @_getEditors()
+
+    _getEditors: -> atom.workspace.getTextEditors()
+
+    _getRepo: -> atom.project.getRepo()
+
+    _updateTabStylesForPath: (path) =>
+        if @_pathExists path
+            repo = @_getRepo()
             isModified = repo?.isPathModified path
             isNew = repo?.isPathNew path
             isIgnored = repo?.isPathIgnored path
-            tab = $(".tab [data-path='#{path}']")
+            tab = @_findTabForPath path
             if isModified
                 tab?.addClass "status-modified"
             else if isNew
@@ -26,5 +31,8 @@ class GitTabStatus
             else
                 tab?.removeClass "status-added status-modified status-ignored"
 
+    _pathExists: (path) -> fs.existsSync path
+
+    _findTabForPath: (path) -> $(".tab [data-path='#{path}']")
 
 module.exports = new GitTabStatus()
