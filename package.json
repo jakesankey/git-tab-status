@@ -1,7 +1,7 @@
 {
   "name": "git-tab-status",
   "main": "./lib/git-tab-status.coffee",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Color code tabs based on git status.",
   "repository": {
     "type": "git",
@@ -11,8 +11,7 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "readme": "# Git Tab Status Package for Atom\n\n`apm install git-tab-status`\n\n![](https://raw.githubusercontent.com/jakesankey/git-tab-status/master/resources/screenshot.png)\n\nThis package adds the ability for your open tabs to reflect their git status.",
   "readmeFilename": "README.md",
   "bugs": {
