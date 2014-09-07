@@ -1,5 +1,8 @@
 language: objective-c
 
+os:
+  - osx
+  
 notifications:
   email:
     on_success: never
