@@ -11,7 +11,7 @@ class GitTabStatus
     _updateTabs: =>
         @_updateTabStylesForPath editor.getPath() for editor in @_getEditors()
 
-    _getEditors: -> atom.workspace.getTextEditors()
+    _getEditors: -> atom.workspace.getEditors()
 
     _getRepo: -> atom.project.getRepo()
 
