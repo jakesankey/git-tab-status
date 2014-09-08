@@ -1,7 +1,7 @@
 {
   "name": "git-tab-status",
   "main": "./lib/git-tab-status.coffee",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Color code tabs based on git status.",
   "repository": {
     "type": "git",
