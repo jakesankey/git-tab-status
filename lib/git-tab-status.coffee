@@ -6,16 +6,15 @@ class GitTabStatus
         @_setupWatchConditions()
 
     _setupWatchConditions: ->
-        atom.project.getRepo()?.on "status-changed", @_updateTabs
-        atom.project.getRepo()?.on "statuses-changed", @_updateTabs
-        atom.workspace.eachEditor (editor) =>
-            editor.on "contents-modified", @_updateTabs
+        atom.project.getRepo()?.onDidChangeStatus @_updateTabs
+        atom.project.getRepo()?.onDidChangeStatuses @_updateTabs
+        atom.workspace.observeTextEditors (editor) =>
             editor.on "path-changed", @_updateTabs
 
     _updateTabs: =>
         @_updateTabStylesForPath editor.getPath() for editor in @_getEditors()
 
-    _getEditors: -> atom.workspace.getEditors()
+    _getEditors: -> atom.workspace.getTextEditors()
 
     _getRepo: -> atom.project.getRepo()
 
