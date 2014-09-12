@@ -9,7 +9,8 @@ class GitTabStatus
         atom.project.getRepo()?.onDidChangeStatus @_updateTabs
         atom.project.getRepo()?.onDidChangeStatuses @_updateTabs
         atom.workspace.observeTextEditors (editor) =>
-            editor.on "path-changed", @_updateTabs
+            editor.getBuffer().onDidSave @_updateTabs
+            editor.onDidChangePath @_updateTabs
 
     _updateTabs: =>
         @_updateTabStylesForPath editor.getPath() for editor in @_getEditors()
