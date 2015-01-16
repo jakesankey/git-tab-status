@@ -11,7 +11,9 @@
   "engines": {
     "atom": ">0.126.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^2.1.3"
+  },
   "readme": "## Git Tab Status Package for Atom [![Build Status](http://img.shields.io/travis/jakesankey/git-tab-status.svg?style=flat)](https://travis-ci.org/jakesankey/git-tab-status)\n\n`apm install git-tab-status`\n\n![](https://raw.githubusercontent.com/jakesankey/git-tab-status/master/resources/screenshot.png)\n\nThis package adds the ability for your open tabs to reflect their git status.",
   "readmeFilename": "README.md",
   "bugs": {
