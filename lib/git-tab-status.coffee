@@ -7,15 +7,11 @@ class GitTabStatus
         @_setupWatchConditions()
 
     deactivate: ->
+        clearInterval @watcher
         $(".tab [data-path]").removeClass "status-added status-modified status-ignored"
 
     _setupWatchConditions: ->
-        repo = atom.project.getRepositories()[0]
-        repo.onDidChangeStatus @_updateTabs
-        repo.onDidChangeStatuses @_updateTabs
-        atom.workspace.observeTextEditors (editor) =>
-            editor.on "contents-modified", @_updateTabs
-            editor.on "path-changed", @_updateTabs
+        @watcher = setInterval @_updateTabs, 500
 
     _updateTabs: =>
         @_updateTabStylesForPath editor.getPath() for editor in @_getEditors()
