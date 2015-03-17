@@ -9,12 +9,24 @@ gitTabStatus._findTabForPath = (path) ->
     }
 
 mockOutRepo = (isModified, isNew, isIgnored) ->
-    gitTabStatus._getRepo = ->
-        return {
-            isPathModified: -> isModified,
-            isPathNew: -> isNew,
+    gitTabStatus._getRepositories = ->
+        return [
+          {
+            isPathModified: -> isModified
+            isPathNew: -> false
+            isPathIgnored: -> false
+          },
+          {
+            isPathModified: -> false
+            isPathNew: -> isNew
+            isPathIgnored: -> false
+          },
+          {
+            isPathModified: -> false
+            isPathNew: -> false
             isPathIgnored: -> isIgnored
-        }
+          }
+        ]
 
 describe "Git Tab Status Suite", ->
     TEST_PATH = "./path/file.foo"
