@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/jakesankey/git-tab-status"
   },
+  "scripts": {
+    "test": "apm test"
+  },
   "license": "MIT",
   "engines": {
     "atom": ">0.126.0"

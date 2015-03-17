@@ -3,7 +3,7 @@ fs = require "fs"
 
 class GitTabStatus
     activate: ->
-        @_updateTabs();
+        @_updateTabs()
         @_setupWatchConditions()
 
     deactivate: ->
@@ -25,9 +25,9 @@ class GitTabStatus
             [isModified, isNew, isIgnored] = []
 
             @_getRepositories().forEach (repo) ->
-              isModified ||= repo?.isPathModified(path)
-              isNew ||= repo?.isPathNew(path)
-              isIgnored ||= repo?.isPathIgnored(path)
+                isModified ||= repo?.isPathModified(path)
+                isNew ||= repo?.isPathNew(path)
+                isIgnored ||= repo?.isPathIgnored(path)
 
             tab = @_findTabForPath path
             if isModified

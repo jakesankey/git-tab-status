@@ -1,6 +1,6 @@
 classesAdded = null
 classesRemoved = null
-gitTabStatus = require("../lib/git-tab-status")
+gitTabStatus = require "../lib/git-tab-status"
 
 gitTabStatus._findTabForPath = (path) ->
     return {
