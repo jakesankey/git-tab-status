@@ -1,6 +1,16 @@
 @syntax-color-added: #26c26a;
+@syntax-color-ignored: gray;
+@import "./variables/syntax-variables";
 @import "syntax-variables";
 
 .tab .status-added {
     color: @syntax-color-added !important
+}
+
+.tab .status-modified {
+    color: @syntax-color-modified !important
+}
+
+.tab .status-ignored {
+    color: @syntax-color-ignored !important
 }
