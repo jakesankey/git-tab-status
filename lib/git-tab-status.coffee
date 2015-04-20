@@ -43,6 +43,7 @@ class GitTabStatus
 
     _findTabForPath: (path) ->
         path = path.replace /\\/g, '\\\\'
+        path = path.replace(/[']/g, "\\$&")
         $(".tab [data-path='#{path}']")
 
 module.exports = new GitTabStatus()
