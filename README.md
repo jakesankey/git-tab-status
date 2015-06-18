@@ -1,6 +1,8 @@
-## Git Tab Status Package for Atom [![Build Status](http://img.shields.io/travis/jakesankey/git-tab-status.svg?style=flat)](https://travis-ci.org/jakesankey/git-tab-status)
+## Git Tab Status Package for Atom (Deprecated)
 
-`apm install git-tab-status`
+[![Build Status](http://img.shields.io/travis/jakesankey/git-tab-status.svg?style=flat)](https://travis-ci.org/jakesankey/git-tab-status)
+
+[This functionality has been added to Atom in 0.210.0](https://github.com/atom/atom/releases/tag/v0.210.0) - just go to Settings > Tabs > Enable VCS Coloring.
 
 ![](https://raw.githubusercontent.com/jakesankey/git-tab-status/master/resources/screenshot.png)
 
